@@ -2,23 +2,18 @@ from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
 from django.core.validators import MinValueValidator
+import datetime
 import random
 import string
-import datetime
 
-
+def serial_number_generator():
+    return  '#' + ''.join(random.choices(string.ascii_uppercase, k=2) + random.choices(string.digits, k= 4))
     
 class Item(models.Model):
     name = models.CharField(max_length=40)
     price = models.FloatField(validators=[MinValueValidator(0)])
     quantity = models.PositiveIntegerField()
     total_price = models.FloatField()
-
-
-
-
-
-
 
 
 class Invoice(models.Model):
@@ -28,6 +23,13 @@ class Invoice(models.Model):
         (3, '14 Days'),
         (4, '30 Days'),
     )
+    STATUS_CHOICES = (
+        ('pending', 'Pending'),
+        ('pain', 'Paid'),
+        ('draft', 'Draft'), 
+    )
+    serial_number = models.CharField(max_length=15, default=serial_number_generator())
+    status = models.CharField(choices=STATUS_CHOICES, max_length=7, default='pending')
 
     item_list = models.ManyToManyField(Item)
 
@@ -39,7 +41,7 @@ class Invoice(models.Model):
     sender_postcode = models.CharField(max_length=30)
 
     reciever_username = models.CharField(max_length=50)
-    reciever_email = models.EmailField(unique=True)
+    reciever_email = models.EmailField()
     reciever_country = models.CharField(max_length=50)
     reciever_city = models.CharField(max_length=50)
     reciever_street_address = models.CharField(max_length=50)
@@ -48,7 +50,6 @@ class Invoice(models.Model):
     payment_terms = models.IntegerField(choices=PAYMENT_CHOICES)
     payment_due_date = models.DateField(blank=True, null=True)
     item_total_price = models.FloatField(default=0, blank=True, null=True)
-
     
 
 

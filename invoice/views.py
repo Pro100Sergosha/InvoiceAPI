@@ -13,3 +13,4 @@ class ItemViewset(ModelViewSet):
 class InvoiceViewset(ModelViewSet):
     queryset = Invoice.objects.all()
     serializer_class = InvoiceSerializer
+    
