@@ -13,7 +13,7 @@ class Item(models.Model):
     name = models.CharField(max_length=40)
     price = models.FloatField(validators=[MinValueValidator(0)])
     quantity = models.PositiveIntegerField()
-    total_price = models.FloatField()
+    total_price = models.FloatField(null=True, blank=True)
 
 
 class Invoice(models.Model):
