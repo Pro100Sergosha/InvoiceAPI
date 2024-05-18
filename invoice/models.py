@@ -17,6 +17,7 @@ class Item(models.Model):
 
 
 class Invoice(models.Model):
+    serial_number = models.CharField(max_length=15, default=serial_number_generator())
     PAYMENT_CHOICES = (
         (1, '1 Day'),
         (2, '7 Days'),
@@ -28,7 +29,6 @@ class Invoice(models.Model):
         ('paid', 'Paid'),
         ('draft', 'Draft'), 
     )
-    serial_number = models.CharField(max_length=15, default=serial_number_generator())
     status = models.CharField(choices=STATUS_CHOICES, max_length=7, default='draft')
 
     item_list = models.ManyToManyField(Item)
