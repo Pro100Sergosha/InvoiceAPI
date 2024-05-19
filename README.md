@@ -1,6 +1,6 @@
 # InvoiceAPI
 
-InvoiceAPI is a robust and scalable API designed to manage invoices efficiently. This API provides endpoints for creating, retrieving, updating, and deleting invoices, making it easy to integrate with other systems and applications.
+InvoiceAPI is a compact yet robust API built for efficiently managing invoices within smaller-scale projects. Its concise design offers essential endpoints for creating, retrieving, updating, and deleting invoices, along with seamless item integration.
 
 ## Table of Contents
 
@@ -10,103 +10,68 @@ InvoiceAPI is a robust and scalable API designed to manage invoices efficiently.
 
 #### [Usage](#usage)
 
-#### [Endpoints](Endpoints)
-
-#### [Configuration](#configuration)
+#### [Endpoints](#endpoints)
 
 #### [Contact](#contact)
 
 
 ## Features
 
-Create, read, update, and delete invoices
+Create, read, update, and delete __invoices__
 
-Search and filter invoices by various criteria
+Create, read, update, and delete __items__ in invoice
 
-Comprehensive error handling and validation
+## Installation 
 
-Support for multiple data formats (JSON, XML)
+### !!!Commands may vary for your OS!!!
 
-Easy integration with external systems
+__1. Clone the repository:__
 
-Installation
-Prerequisites
-Python (>= 3.8)
-PostgreSQL (>= 12.x)
-Steps
-Clone the repository:
+```
+git clone https://github.com/pro100sergosha/InvoiceAPI.git
+```
+__2. Navigate to the project directory:__
 
-
-git clone https://github.com/yourusername/InvoiceAPI.git
-
-Navigate to the project directory:
-
+```
 cd InvoiceAPI
+```
 
-Create and activate a virtual environment:
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # For Linux/Mac OS
-    ```
-    ```cmd
-    python -m venv venv
-    venv\Scripts\activate  # For Windows
-    ```
-Install the dependencies:
+__3. Create virtual environment:__
+```
+python -m venv venv
+```
 
+__4. Activate your virtual enviroment:__
+```
+venv\Scripts\activate
+```
+__5. Install the dependencies:__
+
+```
 pip install -r requirements.txt
-Set up environment variables by creating a .env file in the root directory. Use .env.example as a template:
-
-cp .env.example .env
-Update the .env file with your PostgreSQL connection details:
-
-env
 ```
-SECRET_KEY=your_secret_key
-DATABASE_NAME=invoiceapi
-DATABASE_USER=your_db_user
-DATABASE_PASSWORD=your_db_password
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
+
+__6. Set up environment variables by creating a .env file in the root directory. Use .env.example as a template:__
 ```
-Apply the database migrations to set up the database schema:
+code .env
+```
+__7. Apply the database migrations to set up the database schema:__
 ```
 python manage.py migrate
 ```
-Create a superuser to access the Django admin interface:
-```
-python manage.py createsuperuser
-```
-__Start the application__:
+__8. Start the application__:
 ```
 python manage.py runserver
 ```
-__Usage__
-After the installation, the API can be accessed at http://localhost:8000. You can use tools like Postman or curl to interact with the endpoints.
+## Usage
 
-## Endpoints
-Here are some of the main endpoints available in InvoiceAPI:
+After the installation, the API can be accessed at http://localhost:8000. You can use tools like [Postman](https://www.postman.com/downloads/) or other similar applications to interact with the endpoints.
 
-Invoices
-GET /api/invoices/: Retrieve all invoices
-GET /api/invoices/:id/: Retrieve a specific invoice by ID
-POST /api/invoices/: Create a new invoice
-PUT /api/invoices/:id/: Update an existing invoice by ID
-DELETE /api/invoices/:id/: Delete an invoice by ID
-For detailed documentation of all endpoints, please refer to the API Documentation.
-https://app.swaggerhub.com/apis-docs/SergoAzizbekyan/invoice-api/v1
+__For detailed documentation of all endpoints, please refer to the API Documentation below.__
 
-Configuration
-The application can be configured using environment variables. Below are the key configuration options:
-
-SECRET_KEY: The secret key for Django
-DATABASE_NAME: The name of the PostgreSQL database
-DATABASE_USER: The user for the PostgreSQL database
-DATABASE_PASSWORD: The password for the PostgreSQL database user
-DATABASE_HOST: The host of the PostgreSQL database (e.g., localhost)
-DATABASE_PORT: The port of the PostgreSQL database (default: 5432)
+[Swagger Documentation](https://app.swaggerhub.com/apis-docs/SergoAzizbekyan/invoice-api/v1)
 
 
-Contact
+## Contact
 For any questions or suggestions, please contact prizrakgames21@mail.ru.
 
