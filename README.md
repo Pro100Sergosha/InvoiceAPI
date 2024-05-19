@@ -30,7 +30,9 @@ __Invoice Status:__ Each invoice has a status, which can be "pending", "paid", o
 ### Advantages:
 
 __Efficient Invoice Management:__ Users can easily track invoice statuses update items in it and manage payment terms.
+
 __Process Automation:__ Automatic calculation of invoice amounts and setting payment due dates reduce the time spent on manual calculations and setting payment deadlines.
+
 __Security and Convenience:__ The application ensures secure storage of user data and provides a convenient interface for accessing invoice information.
 
 ### Technology Stack:
