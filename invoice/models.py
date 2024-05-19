@@ -48,7 +48,8 @@ class Invoice(models.Model):
     reciever_postcode = models.CharField(max_length=30)
     
     payment_terms = models.IntegerField(choices=PAYMENT_CHOICES)
-    payment_due_date = models.DateField(blank=True, null=True)
+    payment_start_date = models.DateField(blank=True, null=True)
+    payment_end_date = models.DateField(blank=True, null=True)
     item_total_price = models.FloatField(default=0, blank=True, null=True)
     description = models.TextField()
 
@@ -60,7 +61,8 @@ class Invoice(models.Model):
 
 
 @receiver(pre_save, sender=Invoice)
-def set_payment_due_date(sender, instance, **kwargs):
+def set_payment_end_date(sender, instance, **kwargs):
+    instance.payment_end_date = instance.payment_start_date
     if instance.payment_terms:
         if instance.payment_terms == 1:
             payment_period = datetime.timedelta(days=1)
@@ -70,11 +72,10 @@ def set_payment_due_date(sender, instance, **kwargs):
             payment_period = datetime.timedelta(days=14)
         elif instance.payment_terms == 4:
             payment_period = datetime.timedelta(days=30)
-
-        instance.payment_due_date = datetime.date.today() + payment_period
+        instance.payment_end_date += payment_period
 
 @receiver(pre_save, sender=Item)
-def set_payment_due_date(sender, instance, **kwargs):
+def set_total_price(sender, instance, **kwargs):
     if instance.price and instance.quantity:
         instance.total_price = instance.price * instance.quantity
 
