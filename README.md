@@ -4,22 +4,11 @@ InvoiceAPI is a compact yet robust API built for efficiently managing invoices w
 
 ## Table of Contents
 
-#### [Features](#features)
-
 #### [Installation](#installation)
 
 #### [Usage](#usage)
 
-#### [Endpoints](#endpoints)
-
 #### [Contact](#contact)
-
-
-## Features
-
-Create, read, update, and delete __invoices__
-
-Create, read, update, and delete __items__ in invoice
 
 ## Installation 
 
