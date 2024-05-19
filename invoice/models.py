@@ -30,8 +30,10 @@ class Invoice(models.Model):
         ('draft', 'Draft'), 
     )
     status = models.CharField(choices=STATUS_CHOICES, max_length=7, default='draft')
-
+    description = models.TextField()
     item_list = models.ManyToManyField(Item)
+    item_total_price = models.FloatField(default=0, blank=True, null=True)
+
 
     sender_username = models.CharField(max_length=50)
     sender_email = models.EmailField(unique=True)
@@ -50,12 +52,10 @@ class Invoice(models.Model):
     payment_terms = models.IntegerField(choices=PAYMENT_CHOICES)
     payment_start_date = models.DateField(blank=True, null=True)
     payment_end_date = models.DateField(blank=True, null=True)
-    item_total_price = models.FloatField(default=0, blank=True, null=True)
-    description = models.TextField()
 
 
     def __str__(self):
-        return f'Sender Informaiton: {self.sender_username}, {self.sender_email}, {self.sender_city}, {self.sender_country}, {self.sender_street_address}, {self.sender_postcode}.\n \
+        return f'Sender Informaiton: {self.payment_end_date}, {self.sender_email}, {self.sender_city}, {self.sender_country}, {self.sender_street_address}, {self.sender_postcode}.\n \
                 Receivier Information: {self.reciever_username}, {self.reciever_email}, {self.reciever_city}, {self.reciever_country}, {self.reciever_street_address}, {self.reciever_postcode}'
                 
 
