@@ -52,7 +52,7 @@ __2. Navigate to the project directory:__
 cd InvoiceAPI
 ```
 
-__3. Create virtual environment:__
+__3. Create your virtual environment:__
 ```
 python -m venv venv
 ```
