@@ -27,7 +27,7 @@ schema_view = get_schema_view(
       default_version='v1',
       description="This is Invoice API",
       contact=openapi.Contact(email="prizrakgames21@mail.ru"),
-      license=openapi.License(name="BSD License"),
+      license=openapi.License(name="License"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
