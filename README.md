@@ -4,15 +4,42 @@ InvoiceAPI is a compact yet robust API built for efficiently managing invoices w
 
 ## Table of Contents
 
+#### [Features](#features)
+
 #### [Installation](#installation)
 
 #### [Usage](#usage)
 
+
 #### [Contact](#contact)
 
-## Installation 
+## Features:
 
-### !!!Commands may vary for your OS!!!
+__Creation and Management of Invoices:__ Users can easily create new invoices, specifying invoice details such as description, list of items, as well as sender and receiver information.
+
+__Payment Terms Selection:__ When creating an invoice, users can choose payment terms from a provided list of options (1 Day, 7 Days, 14 Days, 30 Days), providing flexibility in managing cash flows.
+
+__Automatic Serial Number Generation:__ Invoice serial numbers are automatically generated using a unique algorithm, ensuring uniqueness and ease of tracking.
+
+__Automatic Calculation of Invoice Amount:__ When adding items to an invoice, the application automatically calculates the total invoice amount based on item prices and quantities.
+
+__Setting Payment Due Date:__ The application automatically sets the payment due date based on the selected payment terms, helping users clearly see payment deadlines.
+
+__Invoice Status:__ Each invoice has a status, which can be "pending", "paid", or "draft" providing transparency in invoice tracking.
+
+### Advantages:
+
+__Efficient Invoice Management:__ Users can easily track invoice statuses update items in it and manage payment terms.
+__Process Automation:__ Automatic calculation of invoice amounts and setting payment due dates reduce the time spent on manual calculations and setting payment deadlines.
+__Security and Convenience:__ The application ensures secure storage of user data and provides a convenient interface for accessing invoice information.
+
+### Technology Stack:
+
+__Django:__ The Django web framework is used for developing the server-side of the application, providing a powerful and secure tool for working with databases and handling requests.
+
+__Python:__ Python programming language is used for writing the business logic of the application, including serial number generation, invoice amount calculations, and payment date setting.
+
+## Installation (!!!Commands may vary for your OS!!!)
 
 __1. Clone the repository:__
 
