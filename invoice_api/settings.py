@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qlncjk0rjchqg5@hisdbitd$^69d4urjp67yc%w+*n9x%3@ng4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'invoiceapi-rpgn.onrender.com']
 
