@@ -66,7 +66,6 @@ class InvoiceSerializer(serializers.ModelSerializer):
                         quantity = new_items_data[0]['quantity'],
                         total_price = new_items_data[0]['quantity'] * new_items_data[0]['price']
                         )
-                    print(new_item)
                     new_items_list.append(new_item)
                     new_items_data.pop()
                 
