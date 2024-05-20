@@ -83,7 +83,7 @@ python manage.py runserver
 ```
 ## Usage
 
-After the installation, the API can be accessed at http://localhost:8000. You can use tools like [Postman](https://www.postman.com/downloads/) or other similar applications to interact with the endpoints.
+After the installation, the API can be accessed at invoiceapi-rpgn.onrender.com/api. You can use tools like [Postman](https://www.postman.com/downloads/) or other similar applications to interact with the endpoints.
 
 __For detailed documentation of all endpoints, please refer to the API Documentation below.__
 
