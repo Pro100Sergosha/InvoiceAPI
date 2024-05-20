@@ -8,5 +8,5 @@ router.register(r'invoices', InvoiceViewset)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('mark_as_<str:new_status>/<int:id>/', ChangeInvoiceStatus.as_view(), name='paid')
+    path('invoices/mark_as_<str:new_status>/<int:id>/', ChangeInvoiceStatus.as_view(), name='paid')
 ]
