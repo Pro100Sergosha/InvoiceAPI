@@ -46,7 +46,6 @@ class InvoiceSerializer(serializers.ModelSerializer):
         items_data = items_data.pop('item_list')
         items = (instance.item_list).all()
         items = list(items)
-        instance.sender_username = validated_data.get('name', instance.sender_username)
         new_items_data = items_data.copy()
         new_items_list = []
         count = len(items)
@@ -57,6 +56,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
                 item.name = item_data.get('name', item.name)
                 item.price = item_data.get('price', item.price)
                 item.quantity = item_data.get('quantity', item.quantity)
+                item.total_price = item_data.get('quantity') * item_data.get('price')
                 item.save()
             elif count == 0:
                 if not items and new_items_data:
