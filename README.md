@@ -4,7 +4,7 @@ InvoiceAPI is a compact yet robust API built for efficiently managing invoices w
 
 ## Table of Contents
 
-#### [Features](#features)
+#### [Functionality](#funcionality)
 
 #### [Installation](#installation)
 
@@ -13,7 +13,7 @@ InvoiceAPI is a compact yet robust API built for efficiently managing invoices w
 
 #### [Contact](#contact)
 
-## Features:
+## Functionality:
 
 __Creation and Management of Invoices:__ Users can easily create new invoices, specifying invoice details such as description, list of items, as well as sender and receiver information.
 
