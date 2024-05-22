@@ -37,7 +37,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
                 'status', 'sender_username', 'sender_email', 'sender_country',
                 'sender_city', 'sender_street_address', 'sender_postcode', 'reciever_username',
                 'reciever_email', 'reciever_country', 'reciever_city', 'reciever_street_address',
-                'reciever_postcode', 'payment_terms', 'payment_start_date',
+                'reciever_postcode', 'payment_terms', 'payment_start_date', 'description'
             ]
 
         for field in fields:
