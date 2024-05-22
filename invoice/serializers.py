@@ -11,7 +11,7 @@ class ItemSerializer(serializers.ModelSerializer):
     total_price = serializers.FloatField(read_only=True)
     class Meta:
         model = Item
-        fields = ['name', 'price', 'quantity', 'total_price']
+        fields = ['id','name', 'price', 'quantity', 'total_price']
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
