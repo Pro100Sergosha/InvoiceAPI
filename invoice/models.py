@@ -1,6 +1,6 @@
 from django.db import models
 from django.dispatch import receiver
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, m2m_changed
 from django.core.validators import MinValueValidator
 import datetime
 import random
@@ -79,3 +79,8 @@ def set_total_price(sender, instance, **kwargs):
     if instance.price and instance.quantity:
         instance.total_price = instance.price * instance.quantity
 
+@receiver(m2m_changed, sender=Invoice.item_list.through)
+def update_item_total_price(sender, instance, action, **kwargs):
+    if action in ["post_add", "post_remove", "post_clear"]:
+        instance.item_total_price = sum(item.total_price for item in instance.item_list.all())
+        instance.save()
