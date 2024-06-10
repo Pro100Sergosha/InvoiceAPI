@@ -66,11 +66,11 @@ def set_payment_end_date(sender, instance, **kwargs):
     if instance.payment_terms:
         if instance.payment_terms == 1:
             payment_period = datetime.timedelta(days=1)
-        elif instance.payment_terms == 2:
+        elif instance.payment_terms == 7:
             payment_period = datetime.timedelta(days=7)
-        elif instance.payment_terms == 3:
+        elif instance.payment_terms == 14:
             payment_period = datetime.timedelta(days=14)
-        elif instance.payment_terms == 4:
+        elif instance.payment_terms == 30:
             payment_period = datetime.timedelta(days=30)
         instance.payment_end_date += payment_period
 
