@@ -20,9 +20,9 @@ class Invoice(models.Model):
     serial_number = models.CharField(max_length=15, default=serial_number_generator())
     PAYMENT_CHOICES = (
         (1, '1 Day'),
-        (2, '7 Days'),
-        (3, '14 Days'),
-        (4, '30 Days'),
+        (7, '7 Days'),
+        (14, '14 Days'),
+        (30, '30 Days'),
     )
     STATUS_CHOICES = (
         ('pending', 'Pending'),
